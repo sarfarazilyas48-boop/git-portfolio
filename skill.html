@@ -1,310 +1,875 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skills</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
 
-    <style>
-        .logo-3d {
-    display: inline-block;
-    position: relative;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    color: #fff;
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    /* 3D depth */
-    text-shadow:
-        1px 1px 0 #198754,
-        2px 2px 0 #146c43,
-        3px 3px 0 #0f5132,
-        5px 5px 0 #0a3622,
-        7px 8px 14px rgba(0, 0, 0, 0.45);
+  <style>
+    :root {
+      --bg: #080a0d;
+      --surface: #10141a;
+      --surface-2: #151b23;
+      --primary: #00e5ff;
+      --primary-2: #3b82f6;
+      --text: #f8fafc;
+      --muted: #a7b0bd;
+      --border: rgba(0, 229, 255, 0.18);
+    }
 
-    transition: all 0.35s ease;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-.logo-symbol {
-    color: #b6ffcf;
-}
+    body {
+      background: radial-gradient(
+        circle at 50% 15%,
+        #111821 0%,
+        var(--bg) 42%,
+        #050608 100%
+      );
+      color: var(--text);
+    }
 
-.logo-name {
-    color: #ffffff;
-}
+    .navbar {
+      background: rgba(5, 7, 10, 0.96) !important;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
 
-.logo-dot {
-    color: #75ff9b;
-    margin: 0 -2px;
-}
+    .navbar .nav-link {
+      color: #dbe5ee !important;
+      transition: color 0.25s ease, transform 0.25s ease;
+      font-family: "Orbitron", sans-serif;
+    }
 
-.logo-coder {
-    color: #e9f5ed;
-}
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      color: var(--primary) !important;
+      transform: translateY(-1px);
+    }
 
-/* Hover */
-.logo-3d:hover {
-    transform: translateY(-4px) rotate(-2deg) scale(1.04);
+    .navbar-toggler {
+      border-color: rgba(0, 229, 255, 0.35);
+    }
 
-    text-shadow:
-        1px 1px 0 #198754,
-        3px 3px 0 #146c43,
-        5px 5px 0 #0f5132,
-        7px 8px 18px rgba(0, 0, 0, 0.55);
-}
-    </style>
+    .logo-3d {
+      display: inline-block;
+      position: relative;
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #ffffff !important;
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        2px 2px 0 #007789,
+        3px 3px 0 #00515f,
+        5px 5px 0 #032f38,
+        7px 8px 14px rgba(0, 0, 0, 0.65);
+
+      transition: all 0.35s ease;
+    }
+
+    .logo-symbol {
+      color: #00e5ff !important;
+    }
+
+    .logo-name {
+      color: #ffffff;
+    }
+
+    .logo-dot {
+      color: #3b82f6 !important;
+      margin: 0 -2px;
+    }
+
+    .logo-coder {
+      color: #eafcff !important;
+    }
+
+    .logo-3d:hover {
+      transform: translateY(-4px) rotate(-2deg) scale(1.04);
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        3px 3px 0 #007789,
+        5px 5px 0 #00515f,
+        7px 8px 18px rgba(0, 229, 255, 0.22);
+    }
+
+    footer.bg-success {
+      background: linear-gradient(
+        180deg,
+        #0e151c 0%,
+        #07090c 100%
+      ) !important;
+
+      border-top: 1px solid var(--border);
+    }
+
+    footer hr {
+      border-color: rgba(0, 229, 255, 0.2);
+    }
+
+    footer a {
+      transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--primary) !important;
+      padding-left: 3px;
+    }
+
+    footer p,
+    footer li,
+    footer span {
+      color: #c7d1dc;
+    }
+
+    @media (max-width: 767.98px) {
+      .logo-3d {
+        font-size: 1.55rem;
+      }
+    }
+
+    .myskill {
+      font-size: 42px;
+      font-weight: 700;
+      font-family: 'Michroma', sans-serif;
+      margin-top: 100px;
+      text-align: center;
+      color: #ffffff;
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        2px 2px 0 #007789,
+        3px 3px 0 #00515f,
+        5px 5px 0 #032f38,
+        7px 8px 14px rgba(0, 0, 0, 0.65);
+
+      transition: all 0.35s ease;
+    }
+
+    .opac {
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .myskill:hover {
+      transform: translateY(-4px) scale(1.03);
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        3px 3px 0 #007789,
+        5px 5px 0 #00515f,
+        7px 8px 18px rgba(0, 229, 255, 0.22);
+    }
+
+    .skillp {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .line1,
+    .line2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      margin-top: 70px;
+    }
+
+    @media (max-width: 550px) {
+      .line1,
+      .line2 {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 25px;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+      }
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5 {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .box1 {
+      background: conic-gradient(
+        var(--primary) 0% 95%,
+        var(--surface-2) 95% 100%
+      );
+    }
+
+    .box2 {
+      background: conic-gradient(
+        var(--primary) 0% 90%,
+        var(--surface-2) 90% 100%
+      );
+    }
+
+    .box3 {
+      background: conic-gradient(
+        var(--primary) 0% 65%,
+        var(--surface-2) 65% 100%
+      );
+    }
+
+    .box4 {
+      background: conic-gradient(
+        var(--primary) 0% 80%,
+        var(--surface-2) 80% 100%
+      );
+    }
+
+    .box5 {
+      background: conic-gradient(
+        var(--primary) 0% 70%,
+        var(--surface-2) 70% 100%
+      );
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5 {
+      transition: all 0.3s ease;
+    }
+
+    .box1:hover,
+    .box2:hover,
+    .box3:hover,
+    .box4:hover,
+    .box5:hover {
+      transform: translateY(-8px) scale(1.08);
+
+      box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.35),
+        0 0 45px rgba(0, 229, 255, 0.18);
+    }
+
+    .box1::before,
+    .box2::before,
+    .box3::before,
+    .box4::before,
+    .box5::before {
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      background: var(--surface);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .box1::before {
+      content: "95%";
+    }
+
+    .box2::before {
+      content: "90%";
+    }
+
+    .box3::before {
+      content: "65%";
+    }
+
+    .box4::before {
+      content: "80%";
+    }
+
+    .box5::before {
+      content: "70%";
+    }
+
+    .box1 span,
+    .box2 span,
+    .box3 span,
+    .box4 span,
+    .box5 span {
+      position: absolute;
+      top: 135px;
+      color: var(--text);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .expertise-cards {
+      width: 900px;
+      margin: 100px auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px;
+    }
+
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+      height: 400px;
+      padding: 20px;
+      margin-bottom: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card1 img,
+    .card2 img,
+    .card3 img,
+    .card4 img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .card1:hover img,
+    .card2:hover img,
+    .card3:hover img,
+    .card4:hover img {
+      transform: scale(1.08);
+    }
+
+    .card1:hover,
+    .card2:hover,
+    .card3:hover,
+    .card4:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.18),
+        0 10px 35px rgba(0, 0, 0, 0.45);
+    }
+
+    .card1 h3,
+    .card2 h3,
+    .card3 h3,
+    .card4 h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 22px;
+    }
+
+    .card1 p,
+    .card2 p,
+    .card3 p,
+    .card4 p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .learning-section {
+      width: 900px;
+      margin: 100px auto;
+    }
+
+    .learning-roadmap {
+      position: relative;
+      width: 750px;
+      margin: auto;
+    }
+
+    .learning-roadmap::before {
+      content: "";
+      position: absolute;
+      left: 31px;
+      top: 30px;
+      bottom: 30px;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--primary),
+        rgba(0, 229, 255, 0.08)
+      );
+    }
+
+    .learning-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 45px;
+    }
+
+    .learning-number {
+      min-width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--surface);
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-size: 17px;
+      font-weight: 700;
+
+      box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.15);
+
+      z-index: 2;
+      transition: 0.35s ease;
+    }
+
+    .learning-content {
+      flex: 1;
+      padding: 25px;
+      background: rgba(16, 20, 26, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: 0.35s ease;
+    }
+
+    .learning-content h3 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 23px;
+    }
+
+    .learning-content p {
+      margin: 0 0 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .learning-content span {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .learning-item:hover .learning-number {
+      transform: scale(1.1);
+      background: var(--primary);
+      color: #080a0d;
+
+      box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.35);
+    }
+
+    .learning-item:hover .learning-content {
+      transform: translateX(8px);
+      border-color: rgba(0, 229, 255, 0.4);
+
+      box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 229, 255, 0.08);
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .expertise-cards {
+        width: 90%;
+        max-width: 90%;
+        margin: 60px auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .learning-section {
+        width: 90%;
+        max-width: 90%;
+        margin: 60px auto;
+      }
+
+      .learning-roadmap {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .line1,
+      .line2 {
+        width: 100%;
+        margin: 40px 0;
+        gap: 40px;
+      }
+
+      .expertise-cards {
+        width: 90%;
+        max-width: 90%;
+        margin: 60px auto;
+      }
+
+      .card1,
+      .card2,
+      .card3,
+      .card4 {
+        width: 100%;
+        height: auto;
+      }
+
+      .learning-content {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-  
-<nav class="navbar navbar bg-success  navbar-expand-lg " data-bs-theme="dark" bg-body-tertiary  >
-  <div class="container-fluid">
-    <a class="navbar-brand logo-3d">
-    <span class="logo-symbol">&lt;</span>
-    <span class="logo-name">MS</span>
-    <span class="logo-dot">.</span>
-    <span class="logo-coder">Coder</span>
-    <span class="logo-symbol">/&gt;</span>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#"> Skill</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="About.html">About</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="sign.html">Contact</a>
-        </li>
-       
-      </ul>
+
+<body>
+
+  <nav class="navbar navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand logo-3d" href="index.html">
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-name">MS</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-coder">Coder</span>
+        <span class="logo-symbol">/&gt;</span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="skill.html">Skill</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="sign.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="section1">
+    <h1 class="myskill">
+      MY SKILLS
+    </h1>
+
+    <p class="skillp">A look at the skills and technologies I’m learning and working with.</p>
+
+    <div class="block">
+      <div class="line1">
+        <div class="box1"><span>HTML</span></div>
+        <div class="box2"><span>CSS</span></div>
+      </div>
+    </div>
+
+    <div class="line2">
+      <div class="box4"><span>BOOTSTRAP</span></div>
+      <div class="box5"><span>GIT & GITHUB</span></div>
+      <div class="box3"><span>JAVASCRIPT</span></div>
     </div>
   </div>
-</nav>
 
-<div class="container px-4 py-5" id="featured-3"> <h2 class="pb-2 border-bottom">My Skills...</h2> <div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> <div class="feature col"> <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"> <i class="bi bi-filetype-html" style="font-size: 40px;"></i> </div> <h3 class="fs-2 text-body-emphasis">HTML & CSS</h3> <p>I use HTML and CSS to create clean, structured and attractive website layouts. I focus on proper structure, modern styling and user-friendly designs.</p> <a href="#" class="icon-link">
-Learn More
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> </div> <div class="feature col"> <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"> <i class="bi bi-bootstrap" style="font-size: 40px;"></i> </div> <h3 class="fs-2 text-body-emphasis">Bootstrap</h3> <p>I use Bootstrap to build responsive layouts quickly and efficiently. I work with its grid system, components and utilities to create websites that work well on different screen sizes.</p> <a href="#" class="icon-link">
-View Projects
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> </div> <div class="feature col"> <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"> <i class="bi bi-filetype-js" style="font-size: 40px;"></i> </div> <h3 class="fs-2 text-body-emphasis">JavaScript</h3> <p>I use JavaScript to add interactivity and dynamic features to websites. I am continuously improving my JavaScript skills by building practical projects.</p> <a href="#" class="icon-link">
-My Projects
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> </div> </div> </div>
+  <div class="section2">
+    <h1 class="myskill">TECHNICAL EXPERTISE</h1>
 
+    <p class="skillp">
+      I have a strong foundation in various web technologies and frameworks, with a focus on creating modern <br>
+      responsive, and user-friendly websites.
+    </p>
 
+    <div class="expertise-cards">
 
-<footer class="py-5 bg-success text-white">
+      <div class="card1">
+        <img src="web.png" alt="frontend development">
+        <h3>Frontend Development</h3>
+        <p>Building modern and responsive websites using HTML, CSS, JavaScript, and Bootstrap with a focus on clean and functional interfaces.</p>
+      </div>
+
+      <div class="card2">
+        <img src="responsive.png" alt="responsive design">
+        <h3>Responsive Design</h3>
+        <p>Creating websites that adapt to different screen sizes and devices, ensuring a consistent user experience across platforms.</p>
+      </div>
+
+      <div class="card3">
+        <img src="ui.png" alt="UI & Visual Design">
+        <h3>UI & Visual Design</h3>
+        <p>Designing clean and engaging interfaces with thoughtful layouts, typography, colors, and visual elements.</p>
+      </div>
+
+      <div class="card4">
+        <img src="git.png" alt="Git & GitHub">
+        <h3>Version Control</h3>
+        <p>Using Git and GitHub for version control, collaboration, and code management in web development projects.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="section2">
+
+    <h2 class="myskill">CURRENTLY LEARNING</h2>
+
+    <p class="skillp">
+      I’m continuously improving my development skills by learning modern <br>
+      technologies and building practical projects.
+    </p>
+
+    <div class="learning-roadmap">
+
+      <div class="learning-item">
+        <div class="learning-number">01</div>
+
+        <div class="learning-content">
+          <h3>JavaScript</h3>
+          <p>
+            Learning advanced concepts, functions, methods, and modern JavaScript
+            techniques used in real-world development.
+          </p>
+          <span>LEARNING</span>
+        </div>
+      </div>
+
+      <div class="learning-item">
+        <div class="learning-number">02</div>
+
+        <div class="learning-content">
+          <h3>DOM & Events</h3>
+          <p>
+            Learning how to make websites interactive by controlling HTML
+            elements and handling user actions with JavaScript.
+          </p>
+          <span>EXPLORING</span>
+        </div>
+      </div>
+
+      <div class="learning-item">
+        <div class="learning-number">03</div>
+
+        <div class="learning-content">
+          <h3>APIs</h3>
+          <p>
+            Learning how websites communicate with external services and work
+            with real-world data using JavaScript.
+          </p>
+          <span>UP NEXT</span>
+        </div>
+      </div>
+
+      <div class="learning-item">
+        <div class="learning-number">04</div>
+
+        <div class="learning-content">
+          <h3>Modern Web Development</h3>
+          <p>
+            Applying everything I learn to build practical, responsive, and
+            real-world web development projects.
+          </p>
+          <span>UPCOMING</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="py-5 bg-success text-white">
 
     <div class="container">
 
-        <div class="row g-4">
+      <div class="row g-4">
 
-            <!-- Portfolio Info -->
-            <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4">
+          <a href="index.html" class="text-white text-decoration-none">
+            <h3 class="fw-bold mb-3 opac">MS.Coder</h3>
+          </a>
 
-                <a href="index.html"
-                   class="text-white text-decoration-none">
+          <p class="mb-3">
+            Frontend Developer focused on creating
+            clean, responsive and user-friendly websites.
+          </p>
 
-                    <h3 class="fw-bold mb-3">
-                        M.Sarfaraz
-                    </h3>
-
-                </a>
-
-                <p class="mb-3">
-                    Frontend Developer focused on creating
-                    clean, responsive and user-friendly websites.
-                </p>
-
-                <p class="mb-0">
-                    Karachi, Pakistan
-                </p>
-
-            </div>
-
-
-            <!-- Pages -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Pages
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="index.html"
-                           class="link-light text-decoration-none">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Services
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="skill.html"
-                           class="link-light text-decoration-none">
-                            Skills
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="about.html"
-                           class="link-light text-decoration-none">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="projects.html"
-                           class="link-light text-decoration-none">
-                            Projects
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Skills -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Skills
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">HTML</li>
-                    <li class="mb-2">CSS</li>
-                    <li class="mb-2">JavaScript</li>
-                    <li class="mb-2">Bootstrap</li>
-                    <li>Git & GitHub</li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Services -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Services
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Web Development
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Responsive Websites
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Landing Pages
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Frontend Projects
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Contact -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Contact
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="sign.html"
-                           class="link-light text-decoration-none">
-                            Contact Me
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="mailto:sarfarazilyas48@gmail.com"
-                           class="link-light text-decoration-none">
-                            03702890698
-                        </a>
-                    </li>
-
-                    <li>
-                        <span>
-                            sarfarazilyas48@gmail.com
-                        </span>
-                    </li>
-
-                </ul>
-
-            </div>
-
+          <p class="mb-0">Karachi, Pakistan</p>
         </div>
 
+        <div class="col-6 col-md-2">
+          <h5 class="fw-bold mb-3">Pages</h5>
 
-        <hr class="my-4">
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="index.html" class="link-light text-decoration-none">
+                Home
+              </a>
+            </li>
 
+            <li class="mb-2">
+              <a href="services.html" class="link-light text-decoration-none">
+                Services
+              </a>
+            </li>
 
-        <!-- Bottom -->
-        <div class="d-flex flex-column flex-md-row
-                    justify-content-between align-items-center">
+            <li class="mb-2">
+              <a href="skill.html" class="link-light text-decoration-none">
+                Skills
+              </a>
+            </li>
 
-            <p class="mb-2 mb-md-0">
-                © 2025–2026 M.Sarfaraz. All rights reserved.
-            </p>
+            <li class="mb-2">
+              <a href="about.html" class="link-light text-decoration-none">
+                About
+              </a>
+            </li>
 
-            <p class="mb-0">
-                Built with HTML, CSS, JavaScript & Bootstrap.
-            </p>
-
+            <li>
+              <a href="projects.html" class="link-light text-decoration-none">
+              </a>
+            </li>
+          </ul>
         </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="fw-bold mb-3">Skills</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">HTML</li>
+            <li class="mb-2">CSS</li>
+            <li class="mb-2">JAVASCRIPT</li>
+            <li class="mb-2">BOOTSTRAP</li>
+            <li>GIT & GITHUB</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="fw-bold mb-3">Services</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="services.html" class="link-light text-decoration-none">
+                Web Development
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="services.html" class="link-light text-decoration-none">
+                Responsive Websites
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="services.html" class="link-light text-decoration-none">
+                Landing Pages
+              </a>
+            </li>
+
+            <li>
+              <a href="services.html" class="link-light text-decoration-none">
+                Frontend Projects
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="fw-bold mb-3">Contact</h5>
+
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="sign.html" class="link-light text-decoration-none">
+                Contact Me
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="mailto:sarfarazilyas48@gmail.com"
+                class="link-light text-decoration-none">
+                03702890698
+              </a>
+            </li>
+
+            <li>
+              <span>sarfarazilyas48@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+        <p class="mb-2 mb-md-0">
+          © 2025–2026 M.Sarfaraz. All rights reserved.
+        </p>
+
+        <p class="mb-0">
+          Built with HTML, CSS, JavaScript & Bootstrap.
+        </p>
+
+      </div>
 
     </div>
 
-</footer>
+  </footer>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>

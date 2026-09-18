@@ -1,1531 +1,970 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
 
-   <body>
-     <style>
+  <style>
+
+    :root {
+      --bg: #080a0d;
+      --surface: #10141a;
+      --surface-2: #151b23;
+      --primary: #00e5ff;
+      --primary-2: #3b82f6;
+      --text: #f8fafc;
+      --muted: #a7b0bd;
+      --border: rgba(0, 229, 255, 0.18);
+    }
 
 
-        /* ================= RESET ================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4faf6;
-        }
+    body {
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          #111821 0%,
+          var(--bg) 42%,
+          #050608 100%
+        );
+
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+    }
 
 
+    /* Navbar */
 
-        /* ================= CONTACT ================= */
-
-        #contact {
-
-            min-height: auto;
-
-            padding: 55px 18px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background: #021b13;
-        }
+    .navbar {
+      background: rgba(5, 7, 10, 0.96) !important;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
 
 
+    .navbar .nav-link {
+      color: #dbe5ee !important;
+      transition: color 0.25s ease, transform 0.25s ease;
+       font-family: "Orbitron", sans-serif;
+    }
 
-        /* ================= BACKGROUND IMAGE ================= */
 
-        #contact::before {
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      color: var(--primary) !important;
+      transform: translateY(-1px);
+    }
 
-            content: "";
 
-            position: absolute;
+    .navbar-toggler {
+      border-color: rgba(0, 229, 255, 0.35);
+    }
 
-            inset: -30px;
 
-            background:
+    /* Logo */
+
+    .logo-3d {
+      display: inline-block;
+      position: relative;
+
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+
+      color: #ffffff !important;
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        2px 2px 0 #007789,
+        3px 3px 0 #00515f,
+        5px 5px 0 #032f38,
+        7px 8px 14px rgba(0, 0, 0, 0.65);
+
+      transition: all 0.35s ease;
+    }
+
+
+    .logo-symbol {
+      color: #00e5ff !important;
+    }
+
+
+    .logo-name {
+      color: #ffffff !important;
+    }
+
+
+    .logo-dot {
+      color: #3b82f6 !important;
+      margin: 0 -2px;
+    }
+
+
+    .logo-coder {
+      color: #eafcff !important;
+    }
+
+
+    .logo-3d:hover {
+      transform: translateY(-4px) rotate(-2deg) scale(1.04);
+
+      text-shadow:
+        1px 1px 0 #00a9bd,
+        3px 3px 0 #007789,
+        5px 5px 0 #00515f,
+        7px 8px 18px rgba(0, 229, 255, 0.22);
+    }
+
+
+    /* Contact Section */
+
+    .contact-section {
+      padding: 100px 0;
+    }
+
+
+    .contact-title {
+      font-family: "Michroma", sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+
+
+    .contact-subtitle {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+
+    /* Contact Info */
+
+    .contact-info {
+      background: rgba(16, 20, 26, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+
+      height: 100%;
+
+      box-shadow:
+        0 0 35px rgba(0, 229, 255, 0.06);
+
+      transition: 0.3s ease;
+    }
+
+
+    .contact-info:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 0 35px rgba(0, 229, 255, 0.12);
+    }
+
+
+    .contact-info h2 {
+      font-family: "Orbitron", sans-serif;
+      color: var(--primary);
+    }
+
+
+    .contact-info p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+
+    .info-item {
+      margin-top: 25px;
+    }
+
+
+    .info-item h5 {
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+
+    .info-item p,
+    .info-item a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+
+    .info-item a:hover {
+      color: var(--primary);
+    }
+
+
+    /* Contact Form */
+
+    .contact-form {
+      background: rgba(16, 20, 26, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+
+      box-shadow:
+        0 0 35px rgba(0, 229, 255, 0.06);
+    }
+
+
+    .form-label {
+      color: #dbe5ee;
+      font-weight: 500;
+    }
+
+
+    .form-control {
+      background: var(--surface-2);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      color: var(--text);
+      padding: 13px 15px;
+      border-radius: 10px;
+    }
+
+
+    .form-control:focus {
+      background: var(--surface-2);
+      color: var(--text);
+
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 0.2rem rgba(0, 229, 255, 0.10);
+    }
+
+
+    .form-control::placeholder {
+      color: #778391;
+    }
+
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+
+    .send-btn {
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      color: #031014;
+      font-weight: 600;
+
+      padding: 12px 28px;
+      border-radius: 10px;
+
+      transition: 0.3s ease;
+    }
+
+
+    .send-btn:hover {
+      background: #63efff;
+      border-color: #63efff;
+      color: #031014;
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.25);
+    }
+
+
+    /* Footer */
+
+    footer.bg-success {
+      background:
         linear-gradient(
-            rgba(0, 25, 20, 0.55),
-            rgba(0, 25, 20, 0.65)
-        ),
-        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85")
-        center / cover no-repeat;
+          180deg,
+          #0e151c 0%,
+          #07090c 100%
+        ) !important;
 
-            z-index: 0;
+      border-top: 1px solid var(--border);
+    }
 
-            animation: backgroundZoom 14s ease-in-out infinite alternate;
-        }
 
+    footer hr {
+      border-color: rgba(0, 229, 255, 0.2);
+    }
 
 
-        /* ================= DARK OVERLAY ================= */
+    footer a {
+      transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
 
-        #contact::after {
 
-            content: "";
+    footer a:hover {
+      color: var(--primary) !important;
+      padding-left: 3px;
+    }
 
-            position: absolute;
 
-            inset: 0;
+    footer p,
+    footer li,
+    footer span {
+      color: #c7d1dc;
+    }
 
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0, 255, 170, 0.13),
-                    transparent 30%
-                ),
 
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(0, 255, 120, 0.10),
-                    transparent 30%
-                );
+    /* Responsive */
 
-            z-index: 1;
+    @media (max-width: 767.98px) {
 
-            pointer-events: none;
-        }
+      .logo-3d {
+        font-size: 1.55rem;
+      }
 
+      .contact-section {
+        padding: 70px 15px;
+      }
 
+      .contact-info,
+      .contact-form {
+        padding: 25px;
+      }
 
-        /* ================= MAIN CONTAINER ================= */
+    }
+/* Small Screen Polish */
 
-        #contactContainer {
-
-            width: 100%;
-
-            max-width: 920px;
-
-            display: grid;
-
-            grid-template-columns: 0.9fr 1.1fr;
-
-            position: relative;
-
-            z-index: 2;
-
-            overflow: visible;
-
-            border-radius: 18px;
-
-            animation:
-                containerIn 1s ease forwards;
-
-            box-shadow:
-                0 18px 45px rgba(20, 70, 45, 0.16);
-        }
-
-
-
-        /* ================= LEFT CARD ================= */
-
-        #contactInfo {
-
-            padding: 30px;
-
-            color: white;
-
-            position: relative;
-
-            overflow: hidden;
-
-            border-radius: 18px 0 0 18px;
-
-            border-right: 0;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(2, 70, 43, 0.94),
-                    rgba(4, 126, 70, 0.78)
-                );
-
-            border:
-                1px solid rgba(255, 255, 255, 0.18);
-
-            backdrop-filter: blur(10px);
-
-            -webkit-backdrop-filter: blur(10px);
-
-            transition:
-                transform 0.45s ease,
-                box-shadow 0.45s ease,
-                background 0.45s ease;
-
-            animation:
-                leftCardIn 1s 0.15s ease both;
-        }
-
-
-
-        /* LEFT CARD HOVER */
-
-        #contactInfo:hover {
-
-            transform:
-                translateY(-4px)
-                scale(1.01);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(2, 88, 52, 0.97),
-                    rgba(5, 153, 83, 0.86)
-                );
-
-            box-shadow:
-                0 25px 55px rgba(0, 255, 150, 0.20);
-
-            z-index: 5;
-        }
-
-
-
-        /* LEFT CARD SHINE */
-
-        #contactInfo::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: -120%;
-
-            left: -70%;
-
-            width: 55%;
-
-            height: 300%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.15),
-                    transparent
-                );
-
-            transform: rotate(25deg);
-
-            transition: 0.8s ease;
-
-            pointer-events: none;
-        }
-
-
-        #contactInfo:hover::before {
-
-            left: 130%;
-        }
-
-
-
-        /* ================= LEFT HEADING ================= */
-
-        #contactInfo h2 {
-
-            margin-bottom: 13px;
-
-            font-size: 30px;
-
-            line-height: 1.2;
-
-            position: relative;
-
-            animation:
-                textReveal 1s 0.5s ease both;
-        }
-
-
-
-        #introText {
-
-            margin-bottom: 24px;
-
-            color: #e4fff0;
-
-            font-size: 15px;
-
-            line-height: 1.7;
-
-            position: relative;
-
-            animation:
-                textReveal 1s 0.65s ease both;
-        }
-
-
-
-        /* ================= INFO BLOCK ================= */
-
-        .info-block {
-
-            margin-top: 15px;
-
-            padding-top: 13px;
-
-            border-top:
-                1px solid rgba(255, 255, 255, 0.17);
-
-            transition:
-                transform 0.3s ease,
-                padding-left 0.3s ease;
-        }
-
-
-        .info-block:hover {
-
-            transform:
-                translateX(7px);
-
-            padding-left: 5px;
-        }
-
-
-
-        .info-block h3 {
-
-            margin-bottom: 5px;
-
-            color: #aef5c9;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1.2px;
-        }
-
-
-
-        .info-block p {
-
-            color: white;
-
-            font-size: 12px;
-
-            line-height: 1.55;
-        }
-
-
-
-        /* ================= LINKS ================= */
-
-        .contact-link {
-
-            color: white;
-
-            text-decoration: none;
-
-            position: relative;
-
-            transition:
-                color 0.3s ease;
-        }
-
-
-        .contact-link::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            bottom: -3px;
-
-            width: 0;
-
-            height: 1px;
-
-            background: #aef5c9;
-
-            transition:
-                width 0.3s ease;
-        }
-
-
-        .contact-link:hover {
-
-            color: #baffd1;
-        }
-
-
-        .contact-link:hover::after {
-
-            width: 100%;
-        }
-
-
-
-        /* ================= FORM CARD ================= */
-
-        #contactFormBox {
-
-            padding: 30px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            border-radius: 0 18px 18px 0;
-
-            background:
-                #ffffff;
-
-            border:
-                1px solid #dce8e1;
-
-            backdrop-filter: blur(18px);
-
-            -webkit-backdrop-filter: blur(18px);
-
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.20);
-
-            transition:
-                transform 0.45s ease,
-                box-shadow 0.45s ease,
-                background 0.45s ease;
-
-            animation:
-                rightCardIn 1s 0.25s ease both;
-        }
-
-
-
-        /* FORM HOVER */
-
-        #contactFormBox:hover {
-
-            transform:
-                translateY(-4px)
-                scale(1.01);
-
-            background:
-                rgba(255, 255, 255, 0.18);
-
-            box-shadow:
-                0 25px 60px rgba(0, 255, 170, 0.18),
-                inset 0 1px 0 rgba(255, 255, 255, 0.30);
-
-            z-index: 5;
-        }
-
-
-
-        /* ================= FORM SHINE ================= */
-
-        #contactFormBox::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: -100%;
-
-            left: -80%;
-
-            width: 45%;
-
-            height: 300%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.12),
-                    transparent
-                );
-
-            transform: rotate(25deg);
-
-            transition:
-                left 0.9s ease;
-
-            pointer-events: none;
-        }
-
-
-        #contactFormBox:hover::before {
-
-            left: 140%;
-        }
-
-
-
-        /* ================= FORM HEADING ================= */
-
-        #contactFormBox h2 {
-
-            margin-bottom: 21px;
-
-            color: #17221c;
-
-            font-size: 28px;
-
-            line-height: 1.2;
-
-            text-shadow:
-                0 3px 15px rgba(0, 0, 0, 0.35);
-
-            animation:
-                textReveal 1s 0.55s ease both;
-        }
-
-
-
-        /* ================= FORM GROUP ================= */
-
-        .form-group {
-
-            margin-bottom: 14px;
-
-            animation:
-                formItemIn 0.7s ease both;
-        }
-
-
-        .form-group:nth-child(1) {
-            animation-delay: 0.55s;
-        }
-
-
-        .form-group:nth-child(2) {
-            animation-delay: 0.65s;
-        }
-
-
-        .form-group:nth-child(3) {
-            animation-delay: 0.75s;
-        }
-
-
-        .form-group:nth-child(4) {
-            animation-delay: 0.85s;
-        }
-
-
-
-        /* ================= LABEL ================= */
-
-        .form-group label {
-
-            display: block;
-
-            margin-bottom: 6px;
-
-            color: #202a24;
-
-            font-size: 14px;
-
-            font-weight: 700;
-        }
-
-
-
-        /* ================= INPUTS ================= */
-
-        .form-group input,
-        .form-group textarea {
-
-            width: 100%;
-
-            padding: 12px 13px;
-
-            border:
-                1px solid #cbd8d0;
-
-            border-radius: 9px;
-
-            outline: none;
-
-            background: #f8fbf9;
-
-            color: #17221c;
-
-            font-family: inherit;
-
-            font-size: 15px;
-
-            transition:
-                border 0.3s ease,
-                background 0.3s ease,
-                box-shadow 0.3s ease,
-                transform 0.3s ease;
-        }
-
-
-
-        /* INPUT HOVER */
-
-        .form-group input:hover,
-        .form-group textarea:hover {
-
-            border-color:
-                rgba(150, 255, 205, 0.65);
-
-            background:
-                rgba(0, 40, 25, 0.28);
-        }
-
-
-
-        /* INPUT FOCUS */
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-
-            border-color: #8effbc;
-
-            background:
-                rgba(0, 40, 25, 0.35);
-
-            box-shadow:
-                0 0 0 3px rgba(85, 255, 160, 0.10),
-                0 8px 25px rgba(0, 0, 0, 0.10);
-
-            transform:
-                translateY(-2px);
-        }
-
-
-
-        /* ================= TEXTAREA ================= */
-
-        .form-group textarea {
-
-            height: 90px;
-
-            resize: none;
-        }
-
-
-
-        /* ================= PLACEHOLDER ================= */
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-
-            color: #68756e;
-        }
-
-
-
-        /* ================= BUTTON ================= */
-
-        #sendBtn {
-
-            width: 100%;
-
-            padding: 13px;
-
-            border: none;
-
-            border-radius: 9px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #087443,
-                    #08a75b
-                );
-
-            color: white;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            letter-spacing: 0.2px;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                letter-spacing 0.3s ease;
-        }
-
-
-
-        /* BUTTON SHINE */
-
-        #sendBtn::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: -100%;
-
-            width: 70%;
-
-            height: 100%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.30),
-                    transparent
-                );
-
-            transform: skewX(-20deg);
-
-            transition:
-                left 0.6s ease;
-        }
-
-
-        #sendBtn:hover::before {
-
-            left: 130%;
-        }
-
-
-
-        /* BUTTON HOVER */
-
-        #sendBtn:hover {
-
-            transform:
-                translateY(-2px)
-                scale(1.01);
-
-            letter-spacing: 0.5px;
-
-            box-shadow:
-                0 14px 30px rgba(0, 180, 100, 0.30);
-        }
-
-
-
-        #sendBtn:active {
-
-            transform:
-                translateY(-1px)
-                scale(0.99);
-        }
-
-
-
-        /* ================= ANIMATIONS ================= */
-
-
-        @keyframes backgroundZoom {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(1.08);
-            }
-        }
-
-
-
-        @keyframes containerIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(50px)
-                    scale(0.94);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
-        }
-
-
-
-        @keyframes leftCardIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateX(-70px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateX(0);
-            }
-        }
-
-
-
-        @keyframes rightCardIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateX(70px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateX(0);
-            }
-        }
-
-
-
-        @keyframes textReveal {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(15px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-
-        @keyframes formItemIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(20px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 700px) {
-
-
-            #contact {
-
-                padding: 35px 14px;
-            }
-
-
-            #contactContainer {
-
-                grid-template-columns: 1fr;
-
-                max-width: 480px;
-            }
-
-
-            #contactInfo {
-
-                padding: 24px;
-
-                border-radius:
-                    22px 22px 0 0;
-
-                border-right: none;
-
-                border-bottom:
-                    1px solid rgba(255, 255, 255, 0.20);
-            }
-
-
-            #contactFormBox {
-
-                padding: 24px;
-
-                border-radius:
-                    0 0 22px 22px;
-
-                border-left: none;
-            }
-
-
-            #contactInfo:hover,
-            #contactFormBox:hover {
-
-                transform:
-                    translateY(-5px)
-                    scale(1.01);
-            }
-
-
-            #contactInfo h2,
-            #contactFormBox h2 {
-
-                font-size: 23px;
-            }
-
-        }
-
-
-        /* ================= FINAL READABILITY FIX ================= */
-
-        #contactFormBox {
-            background: #ffffff;
-            color: #17221c;
-            border: 1px solid #dce8e1;
-        }
-
-        #contactFormBox h2,
-        #contactFormBox label {
-            color: #17221c;
-            text-shadow: none;
-        }
-
-        #contactFormBox input,
-        #contactFormBox textarea {
-            background: #ffffff;
-            color: #17221c;
-            border: 1px solid #cbd8d0;
-        }
-
-        #contactFormBox input::placeholder,
-        #contactFormBox textarea::placeholder {
-            color: #68756e;
-            opacity: 1;
-        }
-
-        #contactFormBox input:focus,
-        #contactFormBox textarea:focus {
-            background: #ffffff;
-            color: #17221c;
-            border-color: #198754;
-        }
-.logo-3d {
-    display: inline-block;
-    position: relative;
-
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-
-    color: #fff;
-
-    /* 3D depth */
-    text-shadow:
-        1px 1px 0 #198754,
-        2px 2px 0 #146c43,
-        3px 3px 0 #0f5132,
-        5px 5px 0 #0a3622,
-        7px 8px 14px rgba(0, 0, 0, 0.45);
-
-    transition: all 0.35s ease;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.logo-symbol {
-    color: #b6ffcf;
+.contact-title {
+  overflow-wrap: break-word;
 }
 
-.logo-name {
-    color: #ffffff;
+.contact-subtitle {
+  overflow-wrap: break-word;
 }
 
-.logo-dot {
-    color: #75ff9b;
-    margin: 0 -2px;
+.info-item a,
+.info-item p,
+footer p,
+footer li,
+footer span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-.logo-coder {
-    color: #e9f5ed;
+@media (max-width: 575.98px) {
+
+  .contact-section {
+    padding: 55px 10px;
+  }
+
+  .contact-title {
+    font-size: 1.65rem;
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 22px 18px;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 1.35rem;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+
 }
 
-/* Hover */
-.logo-3d:hover {
-    transform: translateY(-4px) rotate(-2deg) scale(1.04);
+@media (max-width: 400px) {
 
-    text-shadow:
-        1px 1px 0 #198754,
-        3px 3px 0 #146c43,
-        5px 5px 0 #0f5132,
-        7px 8px 18px rgba(0, 0, 0, 0.55);
+  .logo-3d {
+    font-size: 1.35rem;
+  }
+
+  .contact-title {
+    font-size: 1.45rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 20px 15px;
+  }
+
 }
-    </style>
+.opac{
+     font-family: "Orbitron", sans-serif;
+}
+  </style>
 
-<nav class="navbar navbar bg-success  navbar-expand-lg " data-bs-theme="dark" bg-body-tertiary  >
-  <div class="container-fluid">
-    <a class="navbar-brand logo-3d">
-    <span class="logo-symbol">&lt;</span>
-    <span class="logo-name">MS</span>
-    <span class="logo-dot">.</span>
-    <span class="logo-coder">Coder</span>
-    <span class="logo-symbol">/&gt;</span>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="skill.html"> Skill</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link active" href="sign.html">Contact</a>
-        </li>
-       
-      </ul>
+</head>
+
+<body>
+      <!-- NAVBAR -->
+
+  <nav class="navbar navbar bg-dark navbar-expand-lg"
+       data-bs-theme="dark"
+       bg-body-tertiary>
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand logo-3d">
+
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-name">MS</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-coder">Coder</span>
+        <span class="logo-symbol">/&gt;</span>
+
+      </a>
+
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="services.html">
+              Services
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="skill.html">
+              Skill
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="about.html">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="sign.html">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
     </div>
-  </div>
-</nav>
 
+  </nav>
 
 
-<!-- ================= CONTACT SECTION ================= -->
+  <!-- CONTACT SECTION -->
 
-    <section id="contact">
-
-
-        <div id="contactContainer">
-
-
-            <!-- ================= LEFT CARD ================= -->
-
-            <div id="contactInfo">
-
-
-                <h2>
-                    Let's Work Together
-                </h2>
-
-
-                <p id="introText">
-
-                    I’m Muhammad Sarfaraz, a Frontend Developer
-                    focused on building clean, responsive and
-                    user-friendly websites.
-
-                </p>
-
-
-                <div class="info-block">
-
-                    <h3>
-                        Skills
-                    </h3>
-
-                    <p>
-                        HTML • CSS • JavaScript • Bootstrap • Git & GitHub
-                    </p>
-
-                </div>
-
-
-                <div class="info-block">
-
-                    <h3>
-                        Available For
-                    </h3>
-
-                    <p>
-                        Freelance • Jobs • Frontend Projects
-                    </p>
-
-                </div>
-
-
-                <div class="info-block">
-
-                    <h3>
-                        Email
-                    </h3>
-
-                    <p>
-
-                        <a
-                            id="emailLink"
-                            class="contact-link"
-                            href="mailto:sarfarazilyas48@gmail.com"
-                        >
-                            sarfarazilyas48@gmail.com
-                        </a>
-
-                    </p>
-
-                </div>
-
-
-                <div class="info-block">
-
-                    <h3>
-                        Phone
-                    </h3>
-
-                    <p>
-
-                        <a
-                            id="phoneLink"
-                            class="contact-link"
-                            href="tel:03702890698"
-                        >
-                            03702890698
-                        </a>
-
-                    </p>
-
-                </div>
-
-
-                <div class="info-block">
-
-                    <h3>
-                        WhatsApp
-                    </h3>
-
-                    <p>
-
-                        <a
-                            id="whatsappLink"
-                            class="contact-link"
-                            href="https://wa.me/923702890698"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            03702890698
-                        </a>
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- ================= RIGHT FORM ================= -->
-
-            <div id="contactFormBox">
-
-
-                <h2>
-                    Have a Project in Mind?
-                </h2>
-
-
-                <form id="contactForm">
-
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            autocomplete="name"
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your email"
-                            autocomplete="email"
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="subject">
-                            Project / Subject
-                        </label>
-
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            placeholder="What do you need?"
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Project Details
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Tell me briefly about your project..."
-                        ></textarea>
-
-                    </div>
-
-
-
-                    <button
-                        type="submit"
-                        id="sendBtn"
-                    >
-                        Send Message
-                    </button>
-
-
-                </form>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-
-<footer class="py-5 bg-success text-white">
+  <section class="contact-section">
 
     <div class="container">
 
-        <div class="row g-4">
 
-            <!-- Portfolio Info -->
-            <div class="col-12 col-md-4">
+      <!-- Heading -->
 
-                <a href="index.html"
-                   class="text-white text-decoration-none">
+      <div class="text-center mb-5">
 
-                    <h3 class="fw-bold mb-3">
-                        MS.Coder
-                    </h3>
+        <h1 class="contact-title display-5">
+          LET'S WORK TOGETHER
+        </h1>
 
-                </a>
+        <p class="contact-subtitle mt-3">
+          Have a project in mind or want to work together?
+          Feel free to get in touch with me.
+        </p>
 
-                <p class="mb-3">
-                    Frontend Developer focused on creating
-                    clean, responsive and user-friendly websites.
-                </p>
-
-                <p class="mb-0">
-                    Karachi, Pakistan
-                </p>
-
-            </div>
+      </div>
 
 
-            <!-- Pages -->
-            <div class="col-6 col-md-2">
+      <div class="row g-4 align-items-stretch">
 
-                <h5 class="fw-bold mb-3">
-                    pages
-                </h5>
 
-                <ul class="list-unstyled">
+        <!-- LEFT SIDE -->
 
-                    <li class="mb-2">
-                        <a href="index.html"
-                           class="link-light text-decoration-none">
-                            Home
-                        </a>
-                    </li>
+        <div class="col-lg-5">
 
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Services
-                        </a>
-                    </li>
+          <div class="contact-info">
 
-                    <li class="mb-2">
-                        <a href="skill.html"
-                           class="link-light text-decoration-none">
-                            Skills
-                        </a>
-                    </li>
+            <h2 class="mb-3">
+              Get In Touch
+            </h2>
 
-                    <li class="mb-2">
-                        <a href="about.html"
-                           class="link-light text-decoration-none">
-                            About
-                        </a>
-                    </li>
+            <p>
+              I’m always open to discussing new projects,
+              creative ideas, or opportunities to be part
+              of your vision.
+            </p>
 
-                    <li>
-                        <a href="projects.html"
-                           class="link-light text-decoration-none">
-                            
-                        </a>
-                    </li>
 
-                </ul>
+            <!-- Email -->
+
+            <div class="info-item">
+
+              <h5>
+                Email
+              </h5>
+
+              <a href="mailto:sarfarazilyas48@gmail.com">
+
+                sarfarazilyas48@gmail.com
+
+              </a>
 
             </div>
 
 
-            <!-- Skills -->
-            <div class="col-6 col-md-2">
+            <!-- Phone -->
 
-                <h5 class="fw-bold mb-3">
-                    Skills
-                </h5>
+            <div class="info-item">
 
-                <ul class="list-unstyled">
+              <h5>
+                Phone
+              </h5>
 
-                    <li class="mb-2">HTML</li>
-                    <li class="mb-2">CSS</li>
-                    <li class="mb-2">JavaScript</li>
-                    <li class="mb-2">Bootstrap</li>
-                    <li>Git & GitHub</li>
+              <a href="tel:03702890698">
 
-                </ul>
+                03702890698
+
+              </a>
 
             </div>
 
 
-            <!-- Services -->
-            <div class="col-6 col-md-2">
+            <!-- Location -->
 
-                <h5 class="fw-bold mb-3">
-                    Services
-                </h5>
+            <div class="info-item">
 
-                <ul class="list-unstyled">
+              <h5>
+                Location
+              </h5>
 
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Web Development
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Responsive Websites
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Landing Pages
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Frontend Projects
-                        </a>
-                    </li>
-
-                </ul>
+              <p>
+                Karachi, Pakistan
+              </p>
 
             </div>
 
 
-            <!-- Contact -->
-            <div class="col-6 col-md-2">
+            <!-- Availability -->
 
-                <h5 class="fw-bold mb-3">
-                    Contact
-                </h5>
+            <div class="info-item">
 
-                <ul class="list-unstyled">
+              <h5>
+                Availability
+              </h5>
 
-                    <li class="mb-2">
-                        <a href="sign.html"
-                           class="link-light text-decoration-none">
-                            Contact Me
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="mailto:sarfarazilyas48@gmail.com"
-                           class="link-light text-decoration-none">
-                            03702890698
-                        </a>
-                    </li>
-
-                    <li>
-                        <span>
-                            sarfarazilyas48@gmail.com
-                        </span>
-                    </li>
-
-                </ul>
+              <p>
+                Open for freelance projects and
+                frontend development opportunities.
+              </p>
 
             </div>
+
+          </div>
+
+        </div>
+                <!-- RIGHT SIDE -->
+
+        <div class="col-lg-7">
+
+          <div class="contact-form">
+
+            <h2 class="mb-4">
+              Send Me a Message
+            </h2>
+
+
+            <form>
+
+
+              <!-- Name -->
+
+              <div class="mb-4">
+
+                <label
+                  for="name"
+                  class="form-label">
+
+                  Your Name
+
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                  required>
+
+              </div>
+
+
+              <!-- Email -->
+
+              <div class="mb-4">
+
+                <label
+                  for="email"
+                  class="form-label">
+
+                  Your Email
+
+                </label>
+
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                  required>
+
+              </div>
+
+
+              <!-- Message -->
+
+              <div class="mb-4">
+
+                <label
+                  for="message"
+                  class="form-label">
+
+                  Your Message
+
+                </label>
+
+                <textarea
+                  class="form-control"
+                  id="message"
+                  placeholder="Write your message here..."
+                  required></textarea>
+
+              </div>
+
+
+              <!-- Button -->
+
+              <button
+                type="submit"
+                class="send-btn">
+
+                Send Message
+
+              </button>
+
+
+            </form>
+
+          </div>
 
         </div>
 
 
-        <hr class="my-4">
-
-
-        <!-- Bottom -->
-        <div class="d-flex flex-column flex-md-row
-                    justify-content-between align-items-center">
-
-            <p class="mb-2 mb-md-0">
-                © 2025–2026 M.Sarfaraz. All rights reserved.
-            </p>
-
-            <p class="mb-0">
-                Built with HTML, CSS, JavaScript & Bootstrap.
-            </p>
-
-        </div>
+      </div>
 
     </div>
 
-</footer>
+  </section>
+    <!-- FOOTER -->
+
+  <footer class="py-5 bg-success text-white">
+
+    <div class="container">
+
+      <div class="row g-4">
 
 
+        <!-- Portfolio Info -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
-   
-  <script>
-    let form = document.getElementById("contactForm");
+        <div class="col-12 col-md-4">
 
-form.addEventListener("submit", function (event) {
+          <a
+            href="index.html"
+            class="text-white text-decoration-none">
 
-    event.preventDefault();
+            <h3 class="fw-bold mb-3 opac">
+              MS.Coder
+            </h3>
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let subject = document.getElementById("subject").value.trim();
-    let message = document.getElementById("message").value.trim();
+          </a>
 
-    // Basic validation
-    if (name === "" || email === "" || subject === "" || message === "") {
-        alert("Please fill in all the fields before submitting.");
-        return;
-    }
+          <p class="mb-3">
+            Frontend Developer focused on creating
+            clean, responsive and user-friendly websites.
+          </p>
 
-    // Email validation
-    if (!email.includes("@") || !email.includes(".")) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+          <p class="mb-0">
+            Karachi, Pakistan
+          </p>
 
-    // Message length check
-    if (message.length < 10) {
-        alert("Please provide a little more information in your message.");
-        return;
-    }
+        </div>
 
-    // Professional inquiry confirmation
-    let confirmMessage = prompt(
-        "Please confirm: Is this message related to a project, job, freelance work, or another professional inquiry?\n\nType YES to continue."
-    );
 
-    if (confirmMessage === null) {
-        alert("Submission cancelled.");
-        return;
-    }
+        <!-- Pages -->
 
-    if (confirmMessage.trim().toLowerCase() !== "yes") {
-        alert("Submission cancelled. Please use this form for professional inquiries only.");
-        return;
-    }
+        <div class="col-6 col-md-2">
 
-    // Success
-    alert(
-        "Thanks for contacting me, " + name + "!\n\n" +
-        "Your message has been received successfully. " +
-        "Please wait a little — I'll get back to you as soon as possible."
-    );
+          <h5 class="fw-bold mb-3">
+            Pages
+          </h5>
 
-    form.reset();
-});
+          <ul class="list-unstyled">
+
+            <li class="mb-2">
+              <a
+                href="index.html"
+                class="link-light text-decoration-none">
+                Home
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="services.html"
+                class="link-light text-decoration-none">
+                Services
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="skill.html"
+                class="link-light text-decoration-none">
+                Skills
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="about.html"
+                class="link-light text-decoration-none">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="projects.html"
+                class="link-light text-decoration-none">
+                
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="col-6 col-md-2">
+
+          <h5 class="fw-bold mb-3">
+            Skills
+          </h5>
+
+          <ul class="list-unstyled">
+
+            <li class="mb-2">HTML</li>
+            <li class="mb-2">CSS</li>
+            <li class="mb-2">JavaScript</li>
+            <li class="mb-2">Bootstrap</li>
+            <li>Git & GitHub</li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Services -->
+
+        <div class="col-6 col-md-2">
+
+          <h5 class="fw-bold mb-3">
+            Services
+          </h5>
+
+          <ul class="list-unstyled">
+
+            <li class="mb-2">
+              <a
+                href="services.html"
+                class="link-light text-decoration-none">
+                Web Development
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="services.html"
+                class="link-light text-decoration-none">
+                Responsive Websites
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="services.html"
+                class="link-light text-decoration-none">
+                Landing Pages
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="services.html"
+                class="link-light text-decoration-none">
+                Frontend Projects
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Contact -->
+
+        <div class="col-6 col-md-2">
+
+          <h5 class="fw-bold mb-3">
+            Contact
+          </h5>
+
+          <ul class="list-unstyled">
+
+            <li class="mb-2">
+              <a
+                href="sign.html"
+                class="link-light text-decoration-none">
+                Contact Me
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="tel:03702890698"
+                class="link-light text-decoration-none">
+                03702890698
+              </a>
+            </li>
+
+            <li>
+              <span>
+                sarfarazilyas48@gmail.com
+              </span>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <hr class="my-4">
+
+
+      <!-- Footer Bottom -->
+
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+        <p class="mb-2 mb-md-0">
+          © 2025–2026 M.Sarfaraz. All rights reserved.
+        </p>
+
+        <p class="mb-0">
+          Built with HTML, CSS, JavaScript & Bootstrap.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
   </script>
 
 
+</body>
 
 </html>

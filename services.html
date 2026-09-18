@@ -1,327 +1,619 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>services</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
+      .logo-3d {
+        display: inline-block;
+        position: relative;
 
-        .logo-3d {
-    display: inline-block;
-    position: relative;
+        font-family: "Orbitron", sans-serif;
+        font-size: 1.9rem;
 
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
 
-    color: #fff;
+        color: #fff;
 
-    /* 3D depth */
-    text-shadow:
-        1px 1px 0 #198754,
-        2px 2px 0 #146c43,
-        3px 3px 0 #0f5132,
-        5px 5px 0 #0a3622,
-        7px 8px 14px rgba(0, 0, 0, 0.45);
+        /* 3D depth */
+        text-shadow:
+          1px 1px 0 #198754,
+          2px 2px 0 #146c43,
+          3px 3px 0 #0f5132,
+          5px 5px 0 #0a3622,
+          7px 8px 14px rgba(0, 0, 0, 0.45);
 
-    transition: all 0.35s ease;
-}
+        transition: all 0.35s ease;
+      }
 
-.logo-symbol {
-    color: #b6ffcf;
-}
+      .logo-symbol {
+        color: #b6ffcf;
+      }
 
-.logo-name {
-    color: #ffffff;
-}
+      .logo-name {
+        color: #ffffff;
+      }
 
-.logo-dot {
-    color: #75ff9b;
-    margin: 0 -2px;
-}
+      .logo-dot {
+        color: #75ff9b;
+        margin: 0 -2px;
+      }
 
-.logo-coder {
-    color: #e9f5ed;
-}
+      .logo-coder {
+        color: #e9f5ed;
+      }
 
-/* Hover */
-.logo-3d:hover {
-    transform: translateY(-4px) rotate(-2deg) scale(1.04);
+      /* Hover */
+      .logo-3d:hover {
+        transform: translateY(-4px) rotate(-2deg) scale(1.04);
 
-    text-shadow:
-        1px 1px 0 #198754,
-        3px 3px 0 #146c43,
-        5px 5px 0 #0f5132,
-        7px 8px 18px rgba(0, 0, 0, 0.55);
-}
+        text-shadow:
+          1px 1px 0 #198754,
+          3px 3px 0 #146c43,
+          5px 5px 0 #0f5132,
+          7px 8px 18px rgba(0, 0, 0, 0.55);
+      }
       .pic {
-  transition: transform 0.4s ease;
-  overflow: hidden;
-}
+        transition: transform 0.4s ease;
+        overflow: hidden;
+      }
+      .lh-1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 2.5rem;
+      }
+      .pic:hover {
+        transform: scale(1.1);
+      }
+      .buu {
+        transition: transform 0.3s ease;
+      }
 
-.pic:hover {
-  transform: scale(1.1);
-}
-.buu {
-  transition: transform 0.3s ease;
-}
+      .buu:hover {
+        transform: scale(1.1);
+      }
 
-.buu:hover {
-  transform: scale(1.1);
-}
+      /* ===== MS.Coder Dark Theme ===== */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap");
+
+      :root {
+        --bg-main: #070b12;
+        --card-bg: #101827;
+        --cyan: #00e5ff;
+        --blue: #3b82f6;
+        --white: #f8fafc;
+        --muted: #a7b1c2;
+        --border: rgba(0, 229, 255, 0.2);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(0, 229, 255, 0.07),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 85% 55%,
+            rgba(59, 130, 246, 0.07),
+            transparent 30%
+          ),
+          var(--bg-main);
+        color: var(--white);
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+      }
+
+      /* Navbar */
+      nav.navbar.bg-success,
+      nav.navbar.bg-dark {
+        background: rgba(5, 9, 16, 0.94) !important;
+        border-bottom: 1px solid rgba(0, 229, 255, 0.18);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(12px);
+      }
+
+      .logo-3d {
+        font-family: "Orbitron", sans-serif !important;
+        color: var(--white) !important;
+        text-shadow:
+          1px 1px 0 #075985,
+          2px 2px 0 #0369a1,
+          4px 4px 12px rgba(0, 229, 255, 0.22) !important;
+      }
+
+      .logo-symbol,
+      .logo-dot {
+        color: var(--cyan) !important;
+      }
+
+      .logo-name {
+        color: #ffffff !important;
+      }
+      .logo-coder {
+        color: #dbeafe !important;
+      }
+
+      .logo-3d:hover {
+        text-shadow:
+          1px 1px 0 #0e7490,
+          3px 3px 0 #0369a1,
+          6px 8px 18px rgba(0, 229, 255, 0.38) !important;
+      }
+
+      .navbar .nav-link {
+        color: #cbd5e1 !important;
+        font-weight: 500;
+        transition:
+          color 0.25s ease,
+          transform 0.25s ease;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .navbar .nav-link:hover,
+      .navbar .nav-link.active {
+        color: var(--cyan) !important;
+        transform: translateY(-1px);
+      }
+
+      /* Service cards/sections */
+      .container.my-5 > .row.p-4 {
+        background: linear-gradient(
+          135deg,
+          rgba(16, 24, 39, 0.98),
+          rgba(10, 17, 29, 0.98)
+        );
+        border: 1px solid var(--border) !important;
+        border-radius: 22px !important;
+        box-shadow:
+          0 18px 50px rgba(0, 0, 0, 0.38),
+          0 0 30px rgba(0, 229, 255, 0.04) !important;
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+
+      .container.my-5 > .row.p-4:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 229, 255, 0.45) !important;
+        box-shadow:
+          0 22px 55px rgba(0, 0, 0, 0.48),
+          0 0 34px rgba(0, 229, 255, 0.1) !important;
+      }
+
+      .text-body-emphasis {
+        color: var(--white) !important;
+      }
+
+      .lead {
+        color: var(--muted) !important;
+        line-height: 1.8;
+      }
+
+      /* Images */
+      .pic {
+        display: block;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        transition:
+          transform 0.45s ease,
+          filter 0.45s ease;
+        filter: saturate(0.9) contrast(1.05);
+      }
+
+      .pic:hover {
+        transform: scale(1.05);
+        filter: saturate(1.05) contrast(1.08);
+      }
+
+      /* Buttons */
+      .btn-success {
+        background: linear-gradient(
+          135deg,
+          var(--cyan),
+          var(--blue)
+        ) !important;
+        border: none !important;
+        color: #041019 !important;
+        box-shadow: 0 8px 24px rgba(0, 229, 255, 0.16);
+      }
+
+      .btn-success:hover {
+        color: #ffffff !important;
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0, 229, 255, 0.28);
+      }
+
+      .btn-outline-success {
+        color: var(--cyan) !important;
+        border-color: var(--cyan) !important;
+        background: transparent !important;
+      }
+
+      .btn-outline-success:hover {
+        color: #041019 !important;
+        background: var(--cyan) !important;
+        border-color: var(--cyan) !important;
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      .buu {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      /* Footer */
+      footer.bg-success {
+        background: linear-gradient(135deg, #050911, #0b1424) !important;
+        border-top: 1px solid rgba(0, 229, 255, 0.18);
+        box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      footer h3,
+      footer h5 {
+        color: var(--white) !important;
+      }
+
+      footer p,
+      footer li,
+      footer span {
+        color: #a7b1c2;
+      }
+
+      footer a {
+        transition:
+          color 0.25s ease,
+          padding-left 0.25s ease;
+      }
+
+      footer a:hover {
+        color: var(--cyan) !important;
+        padding-left: 3px;
+      }
+
+      footer hr {
+        border-color: rgba(148, 163, 184, 0.2);
+      }
+
+      @media (max-width: 991.98px) {
+        .logo-3d {
+          font-size: 1.55rem !important;
+        }
+      }
+      .opac {
+        font-family: "Orbitron", sans-serif;
+      }
     </style>
   </head>
   <body>
-    
+    <nav
+      class="navbar navbar bg-success navbar-expand-lg"
+      data-bs-theme="dark"
+      bg-body-tertiary
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand logo-3d">
+          <span class="logo-symbol">&lt;</span>
+          <span class="logo-name">MS</span>
+          <span class="logo-dot">.</span>
+          <span class="logo-coder">Coder</span>
+          <span class="logo-symbol">/&gt;</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skill.html">Skill</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<nav class="navbar navbar bg-success  navbar-expand-lg " data-bs-theme="dark" bg-body-tertiary  >
-  <div class="container-fluid">
-    <a class="navbar-brand logo-3d">
-    <span class="logo-symbol">&lt;</span>
-    <span class="logo-name">MS</span>
-    <span class="logo-dot">.</span>
-    <span class="logo-coder">Coder</span>
-    <span class="logo-symbol">/&gt;</span>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="skill.html">Skill</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="About.html">ABout</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="sign.html">Contact</a>
-        </li>
-       
-      </ul>
+    <div class="container my-5">
+      <div
+        class="row p-4 pe-5 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+      >
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+            Build Modern & Responsive Websites
+          </h1>
+          <p class="lead">
+            I create modern, responsive and user-friendly websites using HTML,
+            CSS, Bootstrap and JavaScript. I focus on clean design, smooth user
+            experience and responsive layouts. I also make sure every website is
+            easy to navigate, visually appealing and works well across different
+            devices.
+          </p>
+          <div
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          >
+            <a href="sign.html"
+              ><button
+                type="button"
+                class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu"
+              >
+                contact-me
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img
+            class="rounded rounded-lg-3 pic"
+            src="images/pic1.png"
+            alt=""
+            width="400"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
 
-<div class="container my-5"> <div class="row p-4 pe-5 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"> <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Build Modern & Responsive Websites</h1> <p class="lead">I create modern, responsive and user-friendly websites using HTML, CSS, Bootstrap and JavaScript. I focus on clean design, smooth user experience and responsive layouts. I also make sure every website is easy to navigate, visually appealing and works well across different devices.</p> <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu">view service</button> <button type="button" class="btn btn-outline-success btn-lg px-4 buu">contact-me</button> </div> </div> <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded rounded-lg-3 pic" src="images/pic1.png" alt="" width="400"> </div> </div> </div>
+    <div class="container my-5">
+      <div
+        class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+      >
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+            UI/UX Design
+          </h1>
+          <p class="lead">
+            I create clean, modern and user-friendly interfaces with attractive
+            layouts, simple navigation and a strong focus on delivering a smooth
+            and enjoyable user experience. I pay attention to details to make
+            every design look professional and easy to use.
+          </p>
+          <div
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          >
+            <a href="sign.html"
+              ><button
+                type="button"
+                class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu"
+              >
+                Contact-me
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img
+            class="rounded-lg-3 pic"
+            src="images/pic2.png"
+            alt=""
+            width="400"
+          />
+        </div>
+      </div>
+    </div>
 
-<div class="container my-5">
-  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"> <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> <h1 class="display-4 fw-bold lh-1 text-body-emphasis">UI/UX Design</h1> <p class="lead">I create clean, modern and user-friendly interfaces with attractive layouts, simple navigation and a strong focus on delivering a smooth and enjoyable user experience. I pay attention to details to make every design look professional and easy to use.</p> <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu">view Services</button> <button type="button" class="btn btn-outline-success btn-lg px-4 buu">Contact-me</button> </div> </div> <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3 pic" src="images/pic2.png" alt="" width="400"> </div> </div>
-</div>
+    <div class="container my-5">
+      <div
+        class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+      >
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+            Web Experience & Performance
+          </h1>
+          <p class="lead">
+            I improve websites to make them faster, smoother and more enjoyable
+            to use. I focus on clean layouts, responsive design and better
+            performance while creating a seamless experience for visitors across
+            different devices.
+          </p>
+          <div
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          >
+            <a href="sign.html"
+              ><button
+                type="button"
+                class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu"
+              >
+                Contact-me
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img
+            class="rounded-lg-3 pic"
+            src="images/pic3.png"
+            alt=""
+            width="450"
+          />
+        </div>
+      </div>
+    </div>
 
-<div class="container my-5">
-  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"> <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Web Experience & Performance</h1> <p class="lead">I improve websites to make them faster, smoother and more enjoyable to use. I focus on clean layouts, responsive design and better performance while creating a seamless experience for visitors across different devices.</p> <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold buu">view Services</button> <button type="button" class="btn btn-outline-success btn-lg px-4 buu">Contact-me</button> </div> </div> <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3 pic" src="images/pic3.png" alt="" width="450"> </div> </div>
-</div>
-
-
-<footer class="py-5 bg-success text-white">
-
-    <div class="container">
-
+    <footer class="py-5 bg-success text-white">
+      <div class="container">
         <div class="row g-4">
+          <!-- Portfolio Info -->
+          <div class="col-12 col-md-4">
+            <a href="index.html" class="text-white text-decoration-none">
+              <h3 class="fw-bold mb-3 opac">MS.Coder</h3>
+            </a>
 
-            <!-- Portfolio Info -->
-            <div class="col-12 col-md-4">
+            <p class="mb-3">
+              Frontend Developer focused on creating clean, responsive and
+              user-friendly websites.
+            </p>
 
-                <a href="index.html"
-                   class="text-white text-decoration-none">
+            <p class="mb-0">Karachi, Pakistan</p>
+          </div>
 
-                    <h3 class="fw-bold mb-3">
-                        M.Sarfaraz
-                    </h3>
+          <!-- Pages -->
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Pages</h5>
 
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="link-light text-decoration-none">
+                  Home
                 </a>
+              </li>
 
-                <p class="mb-3">
-                    Frontend Developer focused on creating
-                    clean, responsive and user-friendly websites.
-                </p>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Services
+                </a>
+              </li>
 
-                <p class="mb-0">
-                    Karachi, Pakistan
-                </p>
+              <li class="mb-2">
+                <a href="skill.html" class="link-light text-decoration-none">
+                  Skills
+                </a>
+              </li>
 
-            </div>
+              <li class="mb-2">
+                <a href="about.html" class="link-light text-decoration-none">
+                  About
+                </a>
+              </li>
 
+              <li>
+                <a href="projects.html" class="link-light text-decoration-none">
+                  Projects
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            <!-- Pages -->
-            <div class="col-6 col-md-2">
+          <!-- Skills -->
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Skills</h5>
 
-                <h5 class="fw-bold mb-3">
-                    Pages
-                </h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">HTML</li>
+              <li class="mb-2">CSS</li>
+              <li class="mb-2">JAVASCRIPT</li>
+              <li class="mb-2">BOOTSTRAP</li>
+              <li class="mb-2">GIT & GITHUB</li>
+            </ul>
+          </div>
 
-                <ul class="list-unstyled">
+          <!-- Services -->
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Services</h5>
 
-                    <li class="mb-2">
-                        <a href="index.html"
-                           class="link-light text-decoration-none">
-                            Home
-                        </a>
-                    </li>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Web Development
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Services
-                        </a>
-                    </li>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Responsive Websites
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="skill.html"
-                           class="link-light text-decoration-none">
-                            Skills
-                        </a>
-                    </li>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Landing Pages
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="about.html"
-                           class="link-light text-decoration-none">
-                            About
-                        </a>
-                    </li>
+              <li>
+                <a href="services.html" class="link-light text-decoration-none">
+                  Frontend Projects
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                    <li>
-                        <a href="projects.html"
-                           class="link-light text-decoration-none">
-                            Projects
-                        </a>
-                    </li>
+          <!-- Contact -->
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Contact</h5>
 
-                </ul>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="sign.html" class="link-light text-decoration-none">
+                  Contact Me
+                </a>
+              </li>
 
-            </div>
+              <li class="mb-2">
+                <a
+                  href="mailto:sarfarazilyas48@gmail.com"
+                  class="link-light text-decoration-none"
+                >
+                  03702890698
+                </a>
+              </li>
 
-
-            <!-- Skills -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Skills
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">HTML</li>
-                    <li class="mb-2">CSS</li>
-                    <li class="mb-2">JavaScript</li>
-                    <li class="mb-2">Bootstrap</li>
-                    <li>Git & GitHub</li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Services -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Services
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Web Development
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Responsive Websites
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Landing Pages
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Frontend Projects
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Contact -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Contact
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="sign.html"
-                           class="link-light text-decoration-none">
-                            Contact Me
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="mailto:sarfarazilyas48@gmail.com"
-                           class="link-light text-decoration-none">
-                            03702890698
-                        </a>
-                    </li>
-
-                    <li>
-                        <span>
-                            sarfarazilyas48@gmail.com
-                        </span>
-                    </li>
-
-                </ul>
-
-            </div>
-
+              <li>
+                <span> sarfarazilyas48@gmail.com </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-
-        <hr class="my-4">
-
+        <hr class="my-4" />
 
         <!-- Bottom -->
-        <div class="d-flex flex-column flex-md-row
-                    justify-content-between align-items-center">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <p class="mb-2 mb-md-0">
+            © 2025–2026 M.Sarfaraz. All rights reserved.
+          </p>
 
-            <p class="mb-2 mb-md-0">
-                © 2025–2026 M.Sarfaraz. All rights reserved.
-            </p>
-
-            <p class="mb-0">
-                Built with HTML, CSS, JavaScript & Bootstrap.
-            </p>
-
+          <p class="mb-0">Built with HTML, CSS, JavaScript & Bootstrap.</p>
         </div>
+      </div>
+    </footer>
 
-    </div>
-
-</footer>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

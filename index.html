@@ -1,343 +1,506 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Home</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-.logo-3d {
-    display: inline-block;
-    position: relative;
+      .name {
+        font-family: "Orbitron", sans-serif;
 
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+        letter-spacing: 0.8px;
 
-    color: #fff;
+        color: #ffffff !important;
 
-    /* 3D depth */
-    text-shadow:
-        1px 1px 0 #198754,
-        2px 2px 0 #146c43,
-        3px 3px 0 #0f5132,
-        5px 5px 0 #0a3622,
-        7px 8px 14px rgba(0, 0, 0, 0.45);
-
-    transition: all 0.35s ease;
-}
-
-.logo-symbol {
-    color: #b6ffcf;
-}
-
-.logo-name {
-    color: #ffffff;
-}
-
-.logo-dot {
-    color: #75ff9b;
-    margin: 0 -2px;
-}
-
-.logo-coder {
-    color: #e9f5ed;
-}
-
-/* Hover */
-.logo-3d:hover {
-    transform: translateY(-4px) rotate(-2deg) scale(1.04);
-
-    text-shadow:
-        1px 1px 0 #198754,
-        3px 3px 0 #146c43,
-        5px 5px 0 #0f5132,
-        7px 8px 18px rgba(0, 0, 0, 0.55);
-}
-
-      .ii1{
+        text-shadow:
+          1px 1px 0 #00a9bd,
+          2px 2px 0 #007789,
+          3px 3px 0 #00515f,
+          5px 5px 0 #032f38,
+          7px 8px 14px rgba(0, 0, 0, 0.65);
+      }
+      .ii1 {
         animation: move 3s infinite;
       }
+
       @keyframes move {
-        0%{
+        0% {
           transform: translateY(-20px);
         }
-        50%{
+
+        50% {
           transform: translateY(0);
         }
-        100%{
+
+        100% {
           transform: translateY(-20px);
         }
-        
       }
-      .opac{
+
+      .opac {
         animation: slideLeft 1s ease-out;
+
+        color: var(--text);
+        font-family: "Orbitron", sans-serif;
+        letter-spacing: 0.5px;
       }
+
       @keyframes slideLeft {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
+        from {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
 
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  
- 
-}
-.buu {
-  transition: transform 0.3s ease;
-}
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
 
-.buu:hover {
-  transform: scale(1.1);
-}
+      .buu {
+        transition: transform 0.3s ease;
+      }
+
+      .buu:hover {
+        transform: scale(1.1);
+      }
+      :root {
+        --bg: #080a0d;
+        --surface: #10141a;
+        --surface-2: #151b23;
+        --primary: #00e5ff;
+        --primary-2: #3b82f6;
+        --text: #f8fafc;
+        --muted: #a7b0bd;
+        --border: rgba(0, 229, 255, 0.18);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: radial-gradient(
+          circle at 50% 15%,
+          #111821 0%,
+          var(--bg) 42%,
+          #050608 100%
+        );
+
+        color: var(--text);
+      }
+
+      .navbar {
+        background: rgba(5, 7, 10, 0.96) !important;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .navbar .nav-link {
+        color: #dbe5ee !important;
+        transition:
+          color 0.25s ease,
+          transform 0.25s ease;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .navbar .nav-link:hover,
+      .navbar .nav-link.active {
+        color: var(--primary) !important;
+        transform: translateY(-1px);
+      }
+
+      .navbar-toggler {
+        border-color: rgba(0, 229, 255, 0.35);
+      }
+
+      .logo-3d {
+        display: inline-block;
+        position: relative;
+        font-family: "Orbitron", sans-serif;
+        font-size: 1.9rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: #ffffff !important;
+        transition: all 0.35s ease;
+
+        text-shadow:
+          1px 1px 0 #00a9bd,
+          2px 2px 0 #007789,
+          3px 3px 0 #00515f,
+          5px 5px 0 #032f38,
+          7px 8px 14px rgba(0, 0, 0, 0.65);
+      }
+
+      .logo-symbol {
+        color: #00e5ff !important;
+      }
+
+      .logo-dot {
+        color: #3b82f6 !important;
+      }
+
+      .logo-coder {
+        color: #eafcff !important;
+      }
+
+      .logo-3d:hover {
+        transform: translateY(-4px) rotate(-2deg) scale(1.04);
+
+        text-shadow:
+          1px 1px 0 #00a9bd,
+          3px 3px 0 #007789,
+          5px 5px 0 #00515f,
+          7px 8px 18px rgba(0, 229, 255, 0.22);
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .lead {
+        color: var(--muted);
+      }
+
+      .text-body-emphasis {
+        color: var(--text) !important;
+      }
+
+      .btn-success {
+        --bs-btn-color: #031014;
+        --bs-btn-bg: var(--primary);
+        --bs-btn-border-color: var(--primary);
+        --bs-btn-hover-color: #031014;
+        --bs-btn-hover-bg: #63efff;
+        --bs-btn-hover-border-color: #63efff;
+
+        box-shadow: 0 0 22px rgba(0, 229, 255, 0.18);
+      }
+
+      .btn-outline-success {
+        --bs-btn-color: var(--primary);
+        --bs-btn-border-color: var(--primary);
+        --bs-btn-hover-color: #031014;
+        --bs-btn-hover-bg: var(--primary);
+        --bs-btn-hover-border-color: var(--primary);
+      }
+
+      .buu:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 0 24px rgba(0, 229, 255, 0.22);
+      }
+
+      footer.bg-success {
+        background: linear-gradient(
+          180deg,
+          #0e151c 0%,
+          #07090c 100%
+        ) !important;
+
+        border-top: 1px solid var(--border);
+      }
+
+      footer hr {
+        border-color: rgba(0, 229, 255, 0.2);
+      }
+
+      footer a {
+        transition:
+          color 0.2s ease,
+          padding-left 0.2s ease;
+      }
+
+      footer a:hover {
+        color: var(--primary) !important;
+        padding-left: 3px;
+      }
+
+      footer p,
+      footer li,
+      footer span {
+        color: #c7d1dc;
+      }
+
+      @media (max-width: 767.98px) {
+        .logo-3d {
+          font-size: 1.55rem;
+        }
+      }
+      .blue {
+        color: #00e5ff;
+      }
     </style>
   </head>
+
   <body>
-    
-  
-<nav class="navbar navbar bg-success  navbar-expand-lg " data-bs-theme="dark" bg-body-tertiary  >
-  <div class="container-fluid">
-    <a class="navbar-brand logo-3d">
-    <span class="logo-symbol">&lt;</span>
-    <span class="logo-name">MS</span>
-    <span class="logo-dot">.</span>
-    <span class="logo-coder">Coder</span>
-    <span class="logo-symbol">/&gt;</span>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="skill.html"> Skill</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="sign.html">Contact</a>
-        </li>
-       
-      </ul>
+    <!-- NAVBAR -->
+
+    <nav
+      class="navbar navbar bg-dark navbar-expand-lg"
+      data-bs-theme="dark"
+      bg-body-tertiary
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand logo-3d">
+          <span class="logo-symbol">&lt;</span>
+          <span class="logo-name">MS</span>
+          <span class="logo-dot">.</span>
+          <span class="logo-coder">Coder</span>
+          <span class="logo-symbol">/&gt;</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="services.html"> Services </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="skill.html"> Skill </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"> About </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="sign.html"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-12 col-sm-8 col-lg-6 mx-auto">
+          <img
+            style="width: 400px; height: 400px"
+            src="images/2.png"
+            class="ii1 rounded-circle shadow d-block mx-auto img-fluid"
+            alt="Bootstrap Themes"
+            width="700"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="col-lg-6">
+          <p class="fs-4 fw-bold lh-1 opac blue">Hello, I'm</p>
+
+          <h1 class="display-6 fw-bold opac lh-1 mb-4 name">
+            Muhammad Sarfaraz
+
+            <br />
+          </h1>
+
+          <p class="fs-3 fw-bold opac blue">Frontend Web Developer</p>
+
+          <p class="lead opac">
+            I build responsive and modern websites using HTML, CSS, Bootstrap
+            and JavaScript.
+          </p>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="sign.html">
+              <button
+                type="button"
+                class="btn btn-success btn-lg px-4 me-md-2 opac buu"
+              >
+                Hire me
+              </button>
+            </a>
+
+            <a href="skill.html">
+              <button
+                type="button"
+                class="btn btn-outline-success btn-lg px-4 opac buu"
+              >
+                MY SKILLS
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
-<div class="container  col-xxl-8 px-4 py-5"> <div class="row flex-lg-row-reverse align-items-center g-5 py-5"> <div class="col-12 col-sm-8 col-lg-6 mx-auto "> <img style="width:400px; height: 400px; "  src="images/pic.png" class=" ii1 rounded-circle shadow d-block mx-auto img-fluid " alt="Bootstrap Themes" width="700" hign-upeight="500" loading="lazy"> </div> <div class="col-lg-6"> <p class="fs-4 fw-bold lh-1 opac ">Hello, I'm</p><h1 class="display-5 fw-bold opac lh-1 mb-4"> 
-Muhammad Sarfaraz <br></h1><p class="fs-3 fw-bold opac"> Frontend Web Developer</p> <p class="lead opac">I build responsive and modern websites using HTML, CSS, Bootstrap and JavaScript.</p> <div class="d-grid gap-2 d-md-flex justify-content-md-start"> <button type="button" class="btn btn-success btn-lg px-4 me-md-2 opac buu">Hire me</button> <button type="button" class="btn btn-outline-success btn-lg px-4 opac buu">Dowload CV</button> </div> </div> </div> </div>
 
-<div class="px-4 py-5 my-5 text-center"> <img class=" d-block mx-auto mb-4" src="images/pic1.png" alt="" width="72" height="57"> <h1 class="display-5 fw-bold text-body-emphasis">Build Modern</h1> <div class="col-lg-6 mx-auto"> <p class="lead mb-4">I’m a passionate Front-End Developer focused on creating modern, responsive, and visually engaging websites. I turn ideas into clean, user-friendly interfaces using HTML, CSS, responsive design, and modern UI techniques.</p> <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> <button    type="button" class="btn btn-success btn-lg px-4 gap-3 buu">Home page</button>  </div> </div> </div>
+    <!-- FOOTER -->
 
-<footer class="py-5 bg-success text-white">
-
-    <div class="container">
-
+    <footer class="py-5 bg-success text-white">
+      <div class="container">
         <div class="row g-4">
+          <!-- Portfolio Info -->
 
-            <!-- Portfolio Info -->
-            <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4">
+            <a href="index.html" class="text-white text-decoration-none">
+              <h3 class="fw-bold mb-3 opac">MS.Coder</h3>
+            </a>
 
-                <a href="index.html"
-                   class="text-white text-decoration-none">
+            <p class="mb-3">
+              Frontend Developer focused on creating clean, responsive and
+              user-friendly websites.
+            </p>
 
-                    <h3 class="fw-bold mb-3">
-                        M.Sarfaraz
-                    </h3>
+            <p class="mb-0">Karachi, Pakistan</p>
+          </div>
 
+          <!-- Pages -->
+
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Pages</h5>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="link-light text-decoration-none">
+                  Home
                 </a>
+              </li>
 
-                <p class="mb-3">
-                    Frontend Developer focused on creating
-                    clean, responsive and user-friendly websites.
-                </p>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Services
+                </a>
+              </li>
 
-                <p class="mb-0">
-                    Karachi, Pakistan
-                </p>
+              <li class="mb-2">
+                <a href="skill.html" class="link-light text-decoration-none">
+                  Skills
+                </a>
+              </li>
 
-            </div>
+              <li class="mb-2">
+                <a href="about.html" class="link-light text-decoration-none">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Skills -->
 
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Skills</h5>
 
-            <!-- Pages -->
-            <div class="col-6 col-md-2">
+            <ul class="list-unstyled">
+              <li class="mb-2">HTML</li>
+              <li class="mb-2">CSS</li>
+              <li class="mb-2">JavaScript</li>
+              <li class="mb-2">Bootstrap</li>
+              <li>Git & GitHub</li>
+            </ul>
+          </div>
 
-                <h5 class="fw-bold mb-3">
-                    Pages
-                </h5>
+          <!-- Services -->
 
-                <ul class="list-unstyled">
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Services</h5>
 
-                    <li class="mb-2">
-                        <a href="index.html"
-                           class="link-light text-decoration-none">
-                            Home
-                        </a>
-                    </li>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Web Development
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Services
-                        </a>
-                    </li>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Responsive Websites
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="skill.html"
-                           class="link-light text-decoration-none">
-                            Skills
-                        </a>
-                    </li>
+              <li class="mb-2">
+                <a href="services.html" class="link-light text-decoration-none">
+                  Landing Pages
+                </a>
+              </li>
 
-                    <li class="mb-2">
-                        <a href="about.html"
-                           class="link-light text-decoration-none">
-                            About
-                        </a>
-                    </li>
+              <li>
+                <a href="services.html" class="link-light text-decoration-none">
+                  Frontend Projects
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                    <li>
-                        <a href="projects.html"
-                           class="link-light text-decoration-none">
-                            Projects
-                        </a>
-                    </li>
+          <!-- Contact -->
 
-                </ul>
+          <div class="col-6 col-md-2">
+            <h5 class="fw-bold mb-3">Contact</h5>
 
-            </div>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="sign.html" class="link-light text-decoration-none">
+                  Contact Me
+                </a>
+              </li>
 
+              <li class="mb-2">
+                <a
+                  href="mailto:sarfarazilyas48@gmail.com"
+                  class="link-light text-decoration-none"
+                >
+                  03702890698
+                </a>
+              </li>
 
-            <!-- Skills -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Skills
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">HTML</li>
-                    <li class="mb-2">CSS</li>
-                    <li class="mb-2">JavaScript</li>
-                    <li class="mb-2">Bootstrap</li>
-                    <li>Git & GitHub</li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Services -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Services
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Web Development
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Responsive Websites
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Landing Pages
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="services.html"
-                           class="link-light text-decoration-none">
-                            Frontend Projects
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- Contact -->
-            <div class="col-6 col-md-2">
-
-                <h5 class="fw-bold mb-3">
-                    Contact
-                </h5>
-
-                <ul class="list-unstyled">
-
-                    <li class="mb-2">
-                        <a href="sign.html"
-                           class="link-light text-decoration-none">
-                            Contact Me
-                        </a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="mailto:sarfarazilyas48@gmail.com"
-                           class="link-light text-decoration-none">
-                            03702890698
-                        </a>
-                    </li>
-
-                    <li>
-                        <span>
-                            sarfarazilyas48@gmail.com
-                        </span>
-                    </li>
-
-                </ul>
-
-            </div>
-
+              <li>
+                <span> sarfarazilyas48@gmail.com </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
+        <hr class="my-4" />
 
-        <hr class="my-4">
+        <!-- Footer Bottom -->
 
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <p class="mb-2 mb-md-0">
+            © 2025–2026 M.Sarfaraz. All rights reserved.
+          </p>
 
-        <!-- Bottom -->
-        <div class="d-flex flex-column flex-md-row
-                    justify-content-between align-items-center">
-
-            <p class="mb-2 mb-md-0">
-                © 2025–2026 M.Sarfaraz. All rights reserved.
-            </p>
-
-            <p class="mb-0">
-                Built with HTML, CSS, JavaScript & Bootstrap.
-            </p>
-
+          <p class="mb-0">Built with HTML, CSS, JavaScript & Bootstrap.</p>
         </div>
-
-    </div>
-
-</footer>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
