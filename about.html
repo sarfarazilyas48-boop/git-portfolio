@@ -9,13 +9,13 @@
 
   <title>About | MS.Coder</title>
 
-  <!-- Bootstrap -->
+  
  <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
   rel="stylesheet"
 >
 
-  <!-- Google Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,9 +26,6 @@
 
   <style>
 
-    /* ===============================
-       YOUR EXISTING LOGO
-    =============================== */
 
     .logo-3d {
       display: inline-block;
@@ -88,10 +85,7 @@
     }
 
 
-    /* ===============================
-       DARK THEME
-    =============================== */
-
+   
     :root {
 
       --bg: #080a0d;
@@ -126,10 +120,6 @@
       color: var(--text);
     }
 
-
-    /* ===============================
-       YOUR NAVBAR STYLE
-    =============================== */
 
     .navbar {
 
@@ -210,9 +200,7 @@
     }
 
 
-    /* ===============================
-       ABOUT HERO
-    =============================== */
+ 
 
     .about-section {
 
@@ -231,10 +219,6 @@
       gap: 70px;
     }
 
-
-    /* ===============================
-       ABOUT IMAGE
-    =============================== */
 
     .about-image-box {
 
@@ -315,9 +299,6 @@
     }
 
 
-    /* ===============================
-       ABOUT CONTENT
-    =============================== */
 
     .about-small-title {
 
@@ -377,9 +358,6 @@
     }
 
 
-    /* ===============================
-       INFO BOXES
-    =============================== */
 
     .about-info {
 
@@ -393,7 +371,28 @@
       margin-top: 30px;
     }
 
+.about-content {
+  overflow: hidden;
+}
 
+.about-small-title,
+.about-title,
+.about-content > p,
+.info-box {
+  will-change: transform, opacity;
+}
+
+.highlight {
+  display: inline-block;
+}
+
+.info-box {
+  transition: box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
     .info-box {
 
       padding: 17px 18px;
@@ -445,9 +444,7 @@
     }
 
 
-    /* ===============================
-       MY JOURNEY
-    =============================== */
+    
 
     .journey-section {
 
@@ -576,9 +573,7 @@
     }
 
 
-    /* ===============================
-       CTA
-    =============================== */
+    
 
     .about-cta {
 
@@ -662,9 +657,7 @@
     }
 
 
-    /* ===============================
-       YOUR FOOTER STYLE
-    =============================== */
+    
 
     footer.bg-success {
 
@@ -711,9 +704,7 @@
     }
 
 
-    /* ===============================
-       RESPONSIVE
-    =============================== */
+    
 
     @media (max-width: 900px) {
 
@@ -820,7 +811,7 @@
 }
 
 
-/* Tablets */
+
 @media (max-width: 768px) {
 
   .about-section {
@@ -880,14 +871,14 @@
 }
 
 
-/* Mobile */
+
 @media (max-width: 576px) {
 
   body {
     overflow-x: hidden;
   }
 
-  /* NAVBAR */
+  
 
   .navbar {
     padding-left: 8px;
@@ -909,7 +900,7 @@
   }
 
 
-  /* ABOUT */
+  
 
   .about-section {
     width: 88%;
@@ -918,7 +909,7 @@
   }
 
 
-  /* IMAGE */
+  
 
   .about-image-box img {
     width: 190px;
@@ -931,7 +922,7 @@
   }
 
 
-  /* TITLE */
+  
 
   .about-small-title {
     font-size: 11px;
@@ -946,7 +937,7 @@
   }
 
 
-  /* PARAGRAPHS */
+  
 
   .about-content p {
     font-size: 13px;
@@ -955,7 +946,7 @@
   }
 
 
-  /* INFO */
+  
 
   .about-info {
     grid-template-columns: 1fr;
@@ -976,7 +967,7 @@
   }
 
 
-  /* JOURNEY */
+  
 
   .journey-section {
     width: 88%;
@@ -1019,7 +1010,7 @@
   }
 
 
-  /* CTA */
+  
 
   .about-cta {
     width: 88%;
@@ -1044,7 +1035,7 @@
   }
 
 
-  /* FOOTER */
+  
 
   footer {
     overflow-x: hidden;
@@ -1072,7 +1063,7 @@
 }
 
 
-/* Very small phones */
+
 @media (max-width: 375px) {
 
   .logo-3d {
@@ -1241,14 +1232,10 @@ footer span {
 
 
 
-<!-- =====================================================
-     ABOUT MAIN CONTENT
-===================================================== -->
-
 <section class="about-section">
 
 
-  <!-- IMAGE -->
+  
 
   <div class="about-image-box">
 
@@ -1260,7 +1247,7 @@ footer span {
 
 
 
-  <!-- ABOUT TEXT -->
+  
 
   <div class="about-content">
 
@@ -1307,7 +1294,7 @@ footer span {
     </p>
 
 
-    <!-- INFO -->
+    
 
     <div class="about-info">
 
@@ -1372,9 +1359,6 @@ footer span {
 
 
 
-<!-- =====================================================
-     MY JOURNEY
-===================================================== -->
 
 <section class="journey-section">
 
@@ -1468,9 +1452,7 @@ footer span {
 
 
 
-<!-- =====================================================
-     CTA
-===================================================== -->
+
 
 <section class="about-cta">
 
@@ -1499,9 +1481,7 @@ footer span {
 
 
 
-<!-- =====================================================
-     SAME FOOTER FROM YOUR INDEX
-===================================================== -->
+
 
 <footer class="py-5 bg-success text-white">
 
@@ -1510,7 +1490,7 @@ footer span {
     <div class="row g-4">
 
 
-      <!-- Portfolio Info -->
+      
 
       <div class="col-12 col-md-4">
 
@@ -1543,7 +1523,7 @@ footer span {
 
 
 
-      <!-- Pages -->
+      
 
       <div class="col-6 col-md-2">
 
@@ -1626,7 +1606,7 @@ footer span {
 
 
 
-      <!-- Skills -->
+      
 
       <div class="col-6 col-md-2">
 
@@ -1663,7 +1643,7 @@ footer span {
 
 
 
-      <!-- Services -->
+      
 
       <div class="col-6 col-md-2">
 
@@ -1733,7 +1713,7 @@ footer span {
 
 
 
-      <!-- Contact -->
+      
 
       <div class="col-6 col-md-2">
 
@@ -1791,7 +1771,7 @@ footer span {
     <hr class="my-4">
 
 
-    <!-- Bottom -->
+    
 
     <div
       class="d-flex flex-column flex-md-row
@@ -1823,9 +1803,82 @@ footer span {
 
 
 
-<!-- Bootstrap JS -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+  window.addEventListener("load", () => {
+  gsap.from("body", {
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+});
+
+gsap.from("nav.navbar", {
+  y: -30,
+  opacity: 0,
+  delay:0.3,
+  duration: 0.8,
+  ease: "power3.out"
+});
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".about-image-box", {
+    y: 35,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+
+  gsap.from(".about-content > *", {
+    y: 35,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power3.out"
+  });
+
+  gsap.fromTo(".journey-section > *",
+    {
+      y: 35,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".journey-section",
+        start: "top 82%",
+        toggleActions: "play reverse play reverse"
+      }
+    }
+  );
+
+  gsap.fromTo(".about-cta > *",
+    {
+      y: 35,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".about-cta",
+        start: "top 82%",
+        toggleActions: "play reverse play reverse"
+      }
+    }
+  );
+</script>
+
 
   
 </body>

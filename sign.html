@@ -955,10 +955,109 @@ footer span {
   </footer>
 
 
-  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  alert("Thank you for reaching out! Your message could not be submitted at the moment. Please contact us directly via Gmail or phone number");
+});
+    window.addEventListener("load", () => {
+  gsap.from("body", {
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+});
+
+gsap.from("nav.navbar", {
+  y: -30,
+  opacity: 0,
+  delay:0.3,
+  duration: 0.8,
+  ease: "power3.out"
+});
+    gsap.registerPlugin(ScrollTrigger);
+
+    const contactSection = document.querySelector(".contact-section");
+    const contactTitle = document.querySelector(".contact-title");
+    const contactSubtitle = document.querySelector(".contact-subtitle");
+    const contactInfo = document.querySelector(".contact-info");
+    const contactForm = document.querySelector(".contact-form");
+    const formItems = document.querySelectorAll(".contact-form .mb-4");
+    const sendBtn = document.querySelector(".send-btn");
+
+    gsap.from([contactTitle, contactSubtitle], {
+      y: 35,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.12,
+      ease: "power3.out"
+    });
+
+    gsap.from(contactInfo, {
+      x: -70,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: contactSection,
+        start: "top 75%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+
+    gsap.from(contactForm, {
+      x: 70,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: contactSection,
+        start: "top 75%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+
+    gsap.from(formItems, {
+      y: 25,
+      opacity: 0,
+      duration: 0.55,
+      stagger: 0.12,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: contactForm,
+        start: "top 72%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+
+    gsap.from(sendBtn, {
+      y: 20,
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.6,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: contactForm,
+        start: "top 65%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+
+    gsap.to(contactForm, {
+      y: -8,
+      duration: 2.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
   </script>
 
 
